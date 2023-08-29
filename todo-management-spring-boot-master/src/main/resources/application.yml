@@ -1,0 +1,39 @@
+## Spring view resolver set up
+#server:
+#  port: 7080
+#
+#spring:
+#  mvc:
+#    view:
+#        prefix: /WEB-INF/jsp/
+#        suffix: .jsp
+#
+#  datasource:
+#    url:  "jdbc:mysql://localhost:3306/users_database?useSSL=false"
+#    username: "root"
+#    password: "root"
+#
+#  jpa:
+#    properties:
+#      hibernate:
+#        dialect: "org.hibernate.dialect.MySQL5InnoDBDialect"
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: "org.hibernate.dialect.PostgreSQLDialect"
+    hibernate:
+      ddl-auto: none
+      show-sql: "true"
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    username: "postgres"
+    password: "admin"
+  mvc:
+      view:
+          prefix: /WEB-INF/jsp/
+          suffix: .jsp
+
+server:
+  port: 7090
